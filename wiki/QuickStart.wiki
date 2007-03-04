@@ -1,0 +1,23 @@
+#labels Phase-Requirements,TutorialDocumentation,Featured
+System Requirements to run:
+1. The Python interpreter in your path.
+2. The sh shell script interpreter in your path.
+3. [http://www.realbasic.com/ REALbasic]
+
+QuickStart:
+
+1. To download OpenOtter, go to the download page and download the source. You need [http://www.realbasic.com/ REALbasic] to compile it. REALbasic is free for Linux. You can still look at the source by downloading the .xml version.
+
+2. If you got the .xml version, open it in your favorite text editor to look at the source. The rest of this QuickStart is for the REALbasic version.
+
+3. Unzip the folder
+
+4. Move the folder wherever you want it.
+
+5. Open server.rbp in REALbasic
+
+6. Click the run button in the toolbar.
+
+7. Browse to http://127.0.0.1:8080/ to get to the server.
+
+8. Read the syntax guide there and check out the examples.
