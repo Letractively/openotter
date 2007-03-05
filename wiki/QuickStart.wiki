@@ -8,7 +8,7 @@ QuickStart:
 
 1. To download OpenOtter, go to the download page and download the source. You need [http://www.realbasic.com/ REALbasic] to compile it. REALbasic is free for Linux. You can still look at the source by downloading the .xml version.
 
-2. If you got the .xml version, open it in your favorite text editor to look at the source. The rest of this QuickStart is for the REALbasic version.
+2. If you got the [http://code.google.com/p/openotter/downloads/list?can=4&q=&colspec=Filename+Summary+Uploaded+Size+DownloadCount .xml] version, open it in your favorite text editor to look at the source. The rest of this QuickStart is for the REALbasic version. Please note the .xml version is a deprecated download.
 
 3. Unzip the folder
 
