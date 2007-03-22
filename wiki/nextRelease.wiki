@@ -6,3 +6,4 @@ The next release of OpenOtter includes:
 
 3. The ability to have [http://en.wikipedia.org/wiki/Java_programming Java] programs as pages
 
+4. The ability not to look for embedded stuff in certian files.
