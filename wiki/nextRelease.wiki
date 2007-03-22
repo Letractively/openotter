@@ -1,0 +1,8 @@
+The next release of OpenOtter includes:
+
+1. A database engine
+
+2. Embedded PHP
+
+3. The ability to have [http://en.wikipedia.org/wiki/Java_programming Java] programs as pages
+
