@@ -1,0 +1,75 @@
+#!/usr/bin/env python
+import os
+import sys
+import json
+import cherrypy
+from parse import *
+
+#TODO: make index pages work
+
+root=os.path.dirname(os.path.abspath(sys.argv[0]))
+server=None
+def parseConfig():
+	f=open(os.path.join(root,"config.json"))
+	buf=f.read()
+	f.close()
+	return json.decode(buf)
+
+config=parseConfig()
+class Server:
+	index=dict()
+	def __init__(self):
+		self.index_root()
+	
+	def index_root(self):
+		os.path.walk(config["root"],self.search,None)
+	
+	def search(self,dump,path,dirnames):
+		path=os.path.join(root,config["root"])
+		for f in dirnames:
+			if f.find("index.")==0:
+				self.index[path]=f
+			
+		
+	
+	@cherrypy.expose
+	def default(self, *path, **args):
+		if "WEB-INF" in path:
+			raise cherrypy.NotFound
+		
+		p=os.path.join(root,config["root"],*path)
+		if os.path.isdir(p):
+			print self.index#DEBUG
+			try:
+				buf=list(path)
+				buf.append(self.index[p])
+				return self.default(*buf, **args)
+			except KeyError:
+				raise cherrypy.NotFound# TODO: Or list contents
+			
+		else:
+			try:
+				f=open(p)
+				con=f.read()
+				f.close()
+				return parse(list(path),p,con,args,config)
+			except IOError:
+				raise cherrypy.NotFound
+		
+	
+
+args={}
+for f in config["static"]:
+	fp=os.path.join(root,config["root"],f)
+	if os.path.isdir(fp):
+		args['/'+f]={'tools.staticdir.on':True, 'tools.staticdir.dir':fp}
+	else:
+		args["/"+f]={"tools.staticfile.on":True, "tools.staticfile.filename":fp}
+	
+
+if __name__=='__main__':
+	cherrypy.config.update({"server.socket_port":config['port']})
+	server=Server()
+	cherrypy.tree.mount(server,"/",args)
+	cherrypy.engine.start()
+	cherrypy.engine.block()

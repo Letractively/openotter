@@ -1,0 +1,17 @@
+{
+	"root":"root",
+	"specialdir":"WEB-INF",
+	"static":[
+		"static"
+	],
+	"port":8080,
+	"java":{
+		"java":"/usr/bin/env java",
+		"cachedir":"javacache",
+		"cacheon":true,
+		"javac":"/usr/bin/env javac"
+	},
+	"sh":"/bin/sh",
+	"php":"/usr/bin/env php",
+	"tmp":"/var/tmp"
+}
