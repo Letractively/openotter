@@ -1,0 +1,8 @@
+[
+	{
+		"name":"PHP files only",
+		"ext":"php",
+		"file":"php.py",
+		"all":true
+	}
+]
