@@ -1,3 +1,0 @@
-#summary GitHub Project for next version
-
-I am currently using GitHub for code hosting for the next version. http://github.com/maz/OpenOtter/tree/master
