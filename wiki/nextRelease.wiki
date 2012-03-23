@@ -1,3 +1,5 @@
+*OpenOtter's development has been discontinued.*
+
 I hope OpenOtter will be able to... in the next release of it.
   # have dynamic C pages
   # have joined Python statements; currently they are each executed separately
